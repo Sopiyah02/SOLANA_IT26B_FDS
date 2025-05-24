@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Purple School Supply App</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-purple-50 text-purple-800">
+
+ 
+  <div id="loginPage" class="min-h-screen flex items-center justify-center">
+    <div class="bg-white p-8 rounded-lg shadow-lg w-full max-w-md">
+      <h2 class="text-2xl font-bold mb-4 text-center text-purple-700">Login</h2>
+      <input id="username" type="text" placeholder="Username" class="w-full p-2 mb-2 border border-purple-300 rounded"/>
+      <input id="password" type="password" placeholder="Password" class="w-full p-2 mb-4 border border-purple-300 rounded"/>
+      <button onclick="login()" class="w-full bg-purple-600 hover:bg-purple-700 text-white py-2 rounded">Login</button>
+      <p id="loginError" class="text-red-500 text-center mt-2 hidden">Incorrect login.</p>
+    </div>
+  </div>
+
+
+  <div id="dashboardPage" class="hidden p-6 max-w-4xl mx-auto">
+    <div class="flex justify-between items-center mb-6">
+      <h1 class="text-2xl font-bold">Dashboard</h1>
+      <button onclick="logout()" class="bg-purple-500 text-white px-4 py-2 rounded">Logout</button>
+    </div>
+
+    
+    <input type="text" id="searchInput" placeholder="Search supplies..." class="w-full mb-4 p-2 border border-purple-300 rounded" onkeyup="searchItems()" />
+
+    
+    <div class="flex gap-2 mb-4">
+      <input id="itemName" type="text" placeholder="Item Name" class="p-2 flex-1 border border-purple-300 rounded"/>
+      <input id="itemQty" type="number" placeholder="Quantity" class="p-2 w-24 border border-purple-300 rounded"/>
+      <button onclick="addItem()" class="bg-purple-500 text-white px-4 py-2 rounded">Add</button>
+    </div>
+
+   
+    <table class="w-full text-left bg-white shadow rounded overflow-hidden">
+      <thead class="bg-purple-200 text-purple-800">
+        <tr>
+          <th class="p-3">Item</th>
+          <th class="p-3">Quantity</th>
+          <th class="p-3">Actions</th>
+        </tr>
+      </thead>
+      <tbody id="supplyTable" class="text-purple-800"></tbody>
+    </table>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
